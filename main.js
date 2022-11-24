@@ -14,11 +14,18 @@ let personal = document.getElementById("personal");
 let enjoy = document.getElementById("enjoy");
 let misc = document.getElementById("misc");
 
+let result = document.getElementById('result-id');
+
+let form = document.getElementById('form-id');
+
+result.style.display ="none";
 function fun1() {
+
   let outy = income.value;
   if (outy >= 30000) {
-    out1.innerHTML = income.value;
+    out1.innerHTML = income.value
     let food = income.value * 0.15;
+    
     feeding.innerHTML = food;
     let house = income.value * 0.25;
     housing.innerHTML = house;
@@ -38,8 +45,12 @@ function fun1() {
     enjoy.innerHTML = enjoy1;
     let misc1 = income.value * 0.1;
     misc.innerHTML = misc1;
+
+    form.style.display ="none";
+
+    result.style.display ="block";
   } else {
-    alert("Income must be above ₦30000");
+    alert("Income must be above ₦20");
   }
 }
 

@@ -1,11 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
-:root {
-  --color-white: #f3f3f3;
-  --color-darkblue: #1b1b32;
-  --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
-  --color-green: #37ef65;
+
+/* -------VARIABLES ---------*/
+:root{
+  --main-color:#eaa023;
+  --dark:#0c1023;
+  --dark-light:#191f3a;
+  --white:#ffffff;
+  --white-light:#c8c8c8;
+  --shadow:0 0 15px rgba(0,0,0,25);
+  --cursive-font:'Dancing Script', cursive;
+  scroll-behavior: smooth;
 }
+
+/*-----GLOBAL SETTING ------------*/
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+outline: none;
+
+}
+
 
 *,
 *::before,
@@ -19,7 +36,15 @@ body {
   font-weight: 400;
   line-height: 1.4;
   color: var(--color-white);
-  margin: 0;
+  margin-top: auto;
+  margin: auto;
+  height: 80vh;
+  width: 80vw;
+}
+
+body * {
+  color: var(--white-light);
+
 }
 
 body::before {
@@ -28,10 +53,10 @@ body::before {
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   z-index: -1;
-  background: var(--color-darkblue);
-  background: rgba(136, 136, 206, 0.7);
+  background: var(--dark);
+  background: var(--dark);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -75,25 +100,59 @@ button {
 }
 
 .container {
-  width: 100%;
-  margin: 3.125rem auto 0 auto;
+  width: 80vw !important;
+  margin: auto;
+  
+  display: flex;
+  justify-content: space-around;
+
 }
 
-@media (min-width: 576px) {
+.col {
+  width: 48%;
+  border: 2px solid blue;
+ 
+}
+
+@media (max-width: 576px) {
   .container {
     max-width: 540px;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .container {
     max-width: 720px;
   }
 }
 
+.col * {
+  color: var(--white-light) !important;
+
+}
+
+.result {
+  display: block;
+}
+
 .header {
   padding: 0 0.625rem;
   margin-bottom: 1.875rem;
+}
+
+.categories {
+  display:flex;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 7px;
+  border-radius: 10px;
+  height: 6%;
+  justify-content:space-between;
+  align-items: center;
+  padding: 2px;
+
+  
+  border: 2px double var(--main-color);
 }
 
 .description {
@@ -112,13 +171,18 @@ button {
   text-align: center;
 }
 
+p[class=text-center]{
+ display: flex;
+ justify-content: space-around;
+ font-size: 1.25rem;
+}
 form {
-  background: var(--color-darkblue-alpha);
+  background: var(--dark-light);
   padding: 2.5rem 0.625rem;
   border-radius: 0.25rem;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
   form {
     padding: 2.5rem;
   }
@@ -129,6 +193,9 @@ form {
   padding: 0.25rem;
 }
 
+#result-id{
+  height: 60vh;
+}
 .form-control {
   display: block;
   width: 100%;
@@ -170,7 +237,7 @@ form {
   display: block;
   width: 100%;
   padding: 0.75rem;
-  background: var(--color-green);
+  background: var(--main-color);
   color: inherit;
   border-radius: 2px;
   cursor: pointer;
